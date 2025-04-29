@@ -1,0 +1,169 @@
+{
+    "ricipes": [
+      
+        {
+          "id": 1,
+          "name": "Spaghetti Bolognese",
+          "image": "https://shorturl.at/m7AaS",
+          "category": "Pâtes",
+          "ingredients": ["spaghetti", "viande hachée", "tomates"],
+          "steps": ["Faire cuire les pâtes", "Préparer la sauce", "Mélanger"]
+        },
+        {
+          "id": 2,
+          "name": "Poulet rôti",
+          "image": "https://shorturl.at/cmyBE",
+          "category": "Volaille",
+          "ingredients": ["poulet", "herbes", "huile d'olive"],
+          "steps": ["Assaisonner le poulet", "Mettre au four", "Servir chaud"]
+        },
+        {
+          "id": 3,
+          "name": "Salade César",
+          "image": "https://shorturl.at/bcdyD",
+          "category": "Salade",
+          "ingredients": ["laitue", "croutons", "parmesan", "poulet grillé"],
+          "steps": ["Préparer la laitue", "Ajouter les ingrédients", "Verser la sauce"]
+        },
+        {
+          "id": 4,
+          "name": "Tajine de kefta",
+          "image": "https://shorturl.at/glsDE",
+          "category": "Cuisine marocaine",
+          "ingredients": ["kefta", "œufs", "tomates"],
+          "steps": ["Cuire la kefta", "Ajouter les tomates", "Casser les œufs dessus"]
+        },
+        {
+          "id": 5,
+          "name": "Pizza Margherita",
+          "image": "https://shorturl.at/uGKL6",
+          "category": "Pizza",
+          "ingredients": ["pâte à pizza", "mozzarella", "tomates"],
+          "steps": ["Préparer la pâte", "Mettre la garniture", "Cuire au four"]
+        },
+        {
+          "id": 6,
+          "name": "Crêpes sucrées",
+          "image": "https://shorturl.at/dgpO7",
+          "category": "Dessert",
+          "ingredients": ["farine", "lait", "œufs", "sucre"],
+          "steps": ["Mélanger les ingrédients", "Faire cuire à la poêle", "Servir avec du miel"]
+        },
+        {
+          "id": 7,
+          "name": "Riz aux légumes",
+          "image": "https://shorturl.at/BKQ16",
+          "category": "Végétarien",
+          "ingredients": ["riz", "carottes", "petits pois", "poivrons"],
+          "steps": ["Cuire le riz", "Faire sauter les légumes", "Mélanger le tout"]
+        },
+        {
+          "id": 8,
+          "name": "Omelette aux champignons",
+          "image": "https://shorturl.at/kAV16",
+          "category": "Petit déjeuner",
+          "ingredients": ["œufs", "champignons", "lait", "sel"],
+          "steps": ["Battre les œufs", "Cuire les champignons", "Mélanger et cuire"]
+        },
+        {
+          "id": 9,
+          "name": "Couscous",
+          "image": "https://shorturl.at/hqwHJ",
+          "category": "Cuisine maghrébine",
+          "ingredients": ["semoule", "légumes", "viande", "pois chiches"],
+          "steps": ["Cuire la semoule", "Préparer les légumes", "Cuire la viande", "Servir ensemble"]
+        },
+        {
+          "id": 10,
+          "name": "Soupe de lentilles",
+          "image": "https://shorturl.at/vBQW3",
+          "category": "Soupe",
+          "ingredients": ["lentilles", "carottes", "céleri", "oignons"],
+          "steps": ["Faire revenir les légumes", "Ajouter les lentilles et l'eau", "Cuire et mixer"]
+        },
+        {
+          "id": 11,
+          "name": "Briouates au fromage",
+          "image": "https://shorturl.at/jsuDI",
+          "category": "Entrée",
+          "ingredients": ["feuilles de brick", "fromage", "œuf"],
+          "steps": ["Farcir les feuilles", "Plier en triangle", "Frire"]
+        },
+        {
+          "id": 12,
+          "name": "Chakchouka",
+          "image": "https://shorturl.at/pwCHZ",
+          "category": "Plat principal",
+          "ingredients": ["poivrons", "tomates", "œufs", "épices"],
+          "steps": ["Faire revenir légumes", "Ajouter les œufs", "Cuire à feu doux"]
+        },
+        {
+          "id": 13,
+          "name": "Gratin dauphinois",
+          "image": "https://shorturl.at/fkHT1",
+          "category": "Plat",
+          "ingredients": ["pommes de terre", "crème", "lait", "fromage"],
+          "steps": ["Couper les pommes de terre", "Disposer en couches", "Cuire au four"]
+        },
+        {
+          "id": 14,
+          "name": "Chorba",
+          "image": "https://shorturl.at/xBLT3",
+          "category": "Soupe maghrébine",
+          "ingredients": ["agneau", "vermicelles", "pois chiches", "tomates"],
+          "steps": ["Faire revenir viande", "Ajouter légumes", "Cuire avec eau et vermicelles"]
+        },
+        {
+          "id": 15,
+          "name": "Sandwich thon crudités",
+          "image": "https://shorturl.at/diEFX",
+          "category": "Rapide",
+          "ingredients": ["pain", "thon", "salade", "tomates"],
+          "steps": ["Couper le pain", "Remplir avec ingrédients", "Servir frais"]
+        },
+        {
+          "id": 16,
+          "name": "Gaufres belges",
+          "image": "https://shorturl.at/eqxA3",
+          "category": "Dessert",
+          "ingredients": ["farine", "œufs", "lait", "levure"],
+          "steps": ["Préparer la pâte", "Cuire dans un gaufrier", "Servir sucré"]
+        },
+        {
+          "id": 17,
+          "name": "Chili con carne",
+          "image": "https://shorturl.at/ovCH6",
+          "category": "Tex-Mex",
+          "ingredients": ["haricots rouges", "viande hachée", "tomates", "épices"],
+          "steps": ["Cuire viande", "Ajouter légumes et épices", "Laisser mijoter"]
+        },
+        {
+          "id": 18,
+          "name": "Salade marocaine",
+          "image": "https://shorturl.at/BKZ04",
+          "category": "Salade",
+          "ingredients": ["tomates", "concombre", "oignons", "huile d'olive"],
+          "steps": ["Couper les légumes", "Mélanger", "Ajouter l'huile"]
+        },
+        {
+          "id": 19,
+          "name": "Boulettes de viande",
+          "image": "https://shorturl.at/jEGQ7",
+          "category": "Viande",
+          "ingredients": ["viande hachée", "oignons", "épices", "herbes"],
+          "steps": ["Mélanger ingrédients", "Former des boulettes", "Cuire à la poêle"]
+        },
+        {
+          "id": 20,
+          "name": "Tarte aux pommes",
+          "image": "https://shorturl.at/wyR14",
+          "category": "Dessert",
+          "ingredients": ["pâte", "pommes", "sucre", "cannelle"],
+          "steps": ["Étaler la pâte", "Disposer les pommes", "Cuire au four"]
+        }
+      ]
+      
+          
+    
+    
+  }
