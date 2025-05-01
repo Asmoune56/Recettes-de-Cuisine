@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RatingSystemComponent } from './components/rating-system/rating-system.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,14 @@ import { FormsModule } from '@angular/forms';
     RecipeListComponent,
     RecipeDetailComponent,
     LoginComponent,
-    RatingSystemComponent
+    RatingSystemComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
     
   ],
   providers: [],

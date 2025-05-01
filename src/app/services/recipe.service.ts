@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Recipe } from '../model/Recipe';
+import { Myintirface,  } from '../model/Recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +12,23 @@ export class RecipeService {
 
   constructor (private http : HttpClient){}
 
+// grt
 
-  getAllRecipes(): Observable <Recipe[]>{
-    return this.http.get<Recipe[]>(this.apiUrl);
+  getAllRecipes(): Observable <Myintirface[]>{
+    return this.http.get<Myintirface[]>(this.apiUrl);
   }
 
+//post
 
-  getRecipesById(id : number) :Observable <Recipe>{
+  postRecipe(recipe: any) {
+    return this.http.post<Myintirface>(this.apiUrl,recipe);
+  }
+  
 
-    return this.http.get<Recipe>(`${this.apiUrl}/${id}`);
+
+  getRecipesById(id : number) :Observable <Myintirface>{
+
+    return this.http.get<Myintirface>(`${this.apiUrl}/${id}`);
   }
 
 }

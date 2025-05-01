@@ -1,4 +1,4 @@
-export interface Recipe {
+export interface Myintirface {
     id: number;
     name: string;
     image: string;

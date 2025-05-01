@@ -1,0 +1,50 @@
+Bouton qui ouvre la modale
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRecipeModal">
+    Ajouter une recette
+  </button>
+  
+  <!-- MODALE AVEC LE FORMULAIRE -->
+  <div class="modal fade" id="addRecipeModal" tabindex="-1" aria-labelledby="addRecipeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addRecipeModalLabel">Ajouter une nouvelle recette</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+  
+          <!-- Ton formulaire ici -->
+          <form (ngSubmit)="create()" #recipeForm="ngForm">
+            <div class="form-group">
+              <label for="name">Nom de la recette</label>
+              <input id="name" type="text" [(ngModel)]="formdata.name" name="name" class="form-control" required>
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="image">Image URL</label>
+              <input id="image" type="text" [(ngModel)]="formdata.image" name="image" class="form-control">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="category">Catégorie</label>
+              <input id="category" type="text" [(ngModel)]="formdata.category" name="category" class="form-control">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="ingredients">Ingrédients (séparés par virgules)</label>
+              <input id="ingredients" type="text" [(ngModel)]="ingredientsInput" name="ingredients" class="form-control">
+            </div>
+  
+            <div class="form-group mt-2">
+              <label for="steps">Étapes (séparées par virgules)</label>
+              <input id="steps" type="text" [(ngModel)]="stepsInput" name="steps" class="form-control">
+            </div>
+  
+            <button type="submit" class="btn btn-primary mt-3">Créer la recette</button>
+          </form>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  

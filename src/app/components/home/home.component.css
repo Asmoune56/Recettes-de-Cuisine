@@ -1,0 +1,124 @@
+
+  body {
+    background-color: #FF676D;
+  }
+  
+  /* Header */
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: #FF676D;
+    color: white;
+  }
+  
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+  
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Search Box */
+  .box {
+    max-width: 400px;
+    width: 100%;
+
+  }
+  
+  .box .search-box {
+    box-shadow: 0 5px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    position: relative;
+    height: 50px;
+    max-width: 50px;
+    margin: auto;
+    transition: all 0.3s ease;
+  }
+  
+  #check:checked ~ .search-box {
+    max-width: 380px;
+  }
+  
+  .search-box input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    background: #fff;
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  
+  .search-box .icon {
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 50px;
+    background: #fff;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    color: #FF676D;
+    border-radius: 25px;
+    font-size: 20px;
+  }
+  
+  #check:checked ~ .search-box .icon {
+    background: #FF676D;
+    color: #fff;
+    width: 60px;
+    border-radius: 0 25px 25px 0;
+  }
+  
+  #check {
+    display: none;
+  }
+  .bg-recipes {
+    background: #FF676D;
+    padding: 2rem 0;
+  }
+  .card {
+    border-radius: 15px;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #FF676D;
+  }
+  
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .btn {
+    background: linear-gradient(45deg, #FF676D, #ff8c94);
+    color: white;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .btn {
+    transform: translateY(-2px);
+  }
+  
+  
+  
+ 

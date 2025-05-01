@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from 'src/app/model/Recipe';
+import { Myintirface } from 'src/app/model/Recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  recipes : Recipe[] = [];
+  recipes : Myintirface[] = [];
 
   constructor(private recipService: RecipeService){}
 
@@ -24,5 +24,7 @@ console.log('hello');
       console.log("recipes")
     })
   }
+
+  
 
 }

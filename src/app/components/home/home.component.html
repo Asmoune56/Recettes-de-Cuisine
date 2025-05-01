@@ -1,1 +1,74 @@
-<p>home works!</p>
+<div class="home-header d-flex justify-content-between align-items-center px-4 py-3">
+    <h1 class="page-title">Find a Recipe</h1>
+  
+    <div class="search-wrapper d-flex align-items-center">
+      <div class="box me-3">
+        <input type="checkbox" id="check">
+        <div class="search-box">
+          <input type="text" placeholder="Search...">
+          <label for="check" class="icon">
+            <i class="fas fa-search"></i>
+          </label>
+        </div>
+      </div>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRecipeModal">
+        Ajouter une recette
+      </button>
+        </div>
+  
+  <div style="background: #FF676D; padding: 3rem ;">
+    <div class="container my-5">
+      <h1 class="text-center text-white mb-5">Explore Recipes</h1>
+  
+      <div class="row justify-content-center g-4">
+        <div *ngFor="let recipe of recipes" class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card h-100 custom-shadow w-100">
+                <img [src]="recipe.image" class="card-img-top" alt="{{ recipe.name }}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ recipe.name }}</h5>
+              <p class="card-text text-muted">{{ recipe.category }}</p>
+              <a [routerLink]="['/recette', recipe.id]" class="btn btn-primary mt-auto">Voir la recette</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="addRecipeModal" tabindex="-1" aria-labelledby="addRecipeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form (ngSubmit)="postCommandes()" #recipeForm="ngForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addRecipeModalLabel">Ajouter une recette</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nom de la recette</label>
+              <input type="text" class="form-control" id="name" [(ngModel)]="myCommande.name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">URL de l'image</label>
+              <input type="text" class="form-control" id="image" [(ngModel)]="myCommande.image" name="image">
+            </div>
+            <div class="mb-3">
+              <label for="category" class="form-label">Catégorie</label>
+              <input type="text" class="form-control" id="category" [(ngModel)]="myCommande.category" name="category">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">ingredients</label>
+                <input type="text"class="form-control" id="ingredients" [(ngModel)] ="myCommande.ingredients" name="ingredients">
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button (click)="postCommandes()"  class="btn btn-success ">Ajouter</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
