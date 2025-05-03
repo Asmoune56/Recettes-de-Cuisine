@@ -1,7 +1,7 @@
 declare var bootstrap: any;
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Myintirface } from 'src/app/model/Recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
 
@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit{
     steps: ''
   };
   recipe: any;
+  myCondition = false;
+  bootstrap: any;
+
   
   
   
@@ -38,6 +41,7 @@ postCommandes(){
   this.myVar.postRecipe(this.myCommande).subscribe((recipe) => {
     this.recipes = [recipe, ...this.recipes]; 
     this.videInput(); 
+    this.modalInstance.hide(); 
   });
 }
 
@@ -54,7 +58,9 @@ postCommandes(){
  }
 // edite
 editRecipe(recipe: any) {
-  this.myCommande = { ...recipe };
+  this.myCommande = recipe;
+  this.myCondition = true;
+  this.modalInstance.hide();
 
   // Ouvre le modal avec Bootstrap 5 (si tu veux l'ouvrir automatiquement)
   const modalElement = document.getElementById('addRecipeModal');
@@ -62,14 +68,32 @@ editRecipe(recipe: any) {
     const modal = new bootstrap.Modal(modalElement);
     modal.show();
   }
+  
+
+}
+
+updateRecipe(){
+  this.myVar.updateRecipe(this.myCommande).subscribe( commande =>{
+    this.videInput();
+    this.myCondition = false;
+    this.modalInstance.hide(); // Fermer le modal
+
+  })
 }
 
 deleteRecipe(id: any) {
-  console.log('Deleting ID:', id); // ← Ajoute ceci
   this.myVar.delete(id).subscribe(() => {
     this.recipes = this.recipes.filter(recipe => recipe.id !== id);
   });
 }
+
+@ViewChild('modal') modalElement!: ElementRef;
+private modalInstance: any;
+
+ngAfterViewInit() {
+  this.modalInstance = new bootstrap.Modal(this.modalElement.nativeElement);
+}
+
 
 
 

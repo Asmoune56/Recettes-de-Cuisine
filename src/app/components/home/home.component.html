@@ -55,7 +55,7 @@
   
   
   <!-- Modal d'ajout de recette -->
-  <div class="modal fade" id="addRecipeModal" tabindex="-1" aria-labelledby="addRecipeModalLabel" aria-hidden="true">
+  <div #modal class="modal fade" id="addRecipeModal" class="modal fade" id="addRecipeModal" tabindex="-1" aria-labelledby="addRecipeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <form (ngSubmit)="postCommandes()" #recipeForm="ngForm">
@@ -87,7 +87,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="submit" class="btn btn-success">Ajouter</button>
+            <button *ngIf = "!myCondition"  type="submit" class="btn btn-success">Ajouter</button>
+            <button *ngIf = "myCondition" type="button" (click)="updateRecipe()" class="btn btn-success">Modefier</button>
           </div>
         </form>
       </div>

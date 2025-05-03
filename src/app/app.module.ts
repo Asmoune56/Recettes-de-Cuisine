@@ -22,6 +22,7 @@ import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.
     RecipeDetailComponent,
     LoginComponent,
     RatingSystemComponent,
+    
   ],
   imports: [
     BrowserModule,
