@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { RatingSystemComponent } from './components/rating-system/rating-system.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 
 @NgModule({
   declarations: [
@@ -35,3 +35,4 @@ import { RouterModule } from '@angular/router';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

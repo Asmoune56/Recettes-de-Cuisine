@@ -1,3 +1,5 @@
+
+
 <div class="home-header d-flex justify-content-between align-items-center px-4 py-3">
     <h1 class="page-title">Find a Recipe</h1>
   
@@ -14,26 +16,45 @@
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRecipeModal">
         Ajouter une recette
       </button>
-        </div>
+    </div>
+  </div>
   
-  <div style="background: #FF676D; padding: 3rem ;">
+  <!-- Section de recettes -->
+  <div style="background: #FF676D; padding: 3rem;">
     <div class="container my-5">
       <h1 class="text-center text-white mb-5">Explore Recipes</h1>
   
       <div class="row justify-content-center g-4">
         <div *ngFor="let recipe of recipes" class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card h-100 custom-shadow w-100">
-                <img [src]="recipe.image" class="card-img-top" alt="{{ recipe.name }}">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">{{ recipe.name }}</h5>
-              <p class="card-text text-muted">{{ recipe.category }}</p>
-              <a [routerLink]="['/recette', recipe.id]" class="btn btn-primary mt-auto">Voir la recette</a>
+              <img [src]="recipe.image" class="card-img-top" alt="{{ recipe.name }}">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ recipe.name }}</h5>
+                <p class="card-text text-muted">{{ recipe.category }}</p>
+
+                
+                <!-- Lien correct vers le détail -->
+                <a [routerLink]="['/recette', recipe.id]" class="btn btn-primary mt-auto " >Voir la recette</a>
+                
+                <!-- Boutons Supprimer et Modifier -->
+                <div class="mt-3">
+                  <button class="btn btn-warning me-2" (click)="editRecipe(recipe)">
+                    <i class="bi bi-pencil-square"></i> Éditer
+                  </button>
+                  <button class="btn btn-danger" (click)="deleteRecipe(recipe.id)">
+                    <i class="bi bi-trash"></i> Supprimer
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+          
       </div>
     </div>
   </div>
+  
+  
+  <!-- Modal d'ajout de recette -->
   <div class="modal fade" id="addRecipeModal" tabindex="-1" aria-labelledby="addRecipeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -56,19 +77,21 @@
               <input type="text" class="form-control" id="category" [(ngModel)]="myCommande.category" name="category">
             </div>
             <div class="mb-3">
-                <label for="category" class="form-label">ingredients</label>
-                <input type="text"class="form-control" id="ingredients" [(ngModel)] ="myCommande.ingredients" name="ingredients">
-
+              <label for="ingredients" class="form-label">Ingrédients</label>
+              <input type="text" class="form-control" id="ingredients" [(ngModel)]="myCommande.ingredients" name="ingredients">
+            </div>
+            <div class="mb-3">
+              <label for="steps" class="form-label">Étapes</label>
+              <textarea class="form-control" id="steps" [(ngModel)]="myCommande.steps" name="steps"></textarea>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-        <button (click)="postCommandes()"  class="btn btn-success ">Ajouter</button>
+            <button type="submit" class="btn btn-success">Ajouter</button>
           </div>
         </form>
       </div>
     </div>
   </div>
-  
   
   

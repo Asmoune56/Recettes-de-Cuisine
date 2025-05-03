@@ -9,6 +9,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
+
   recipes : Myintirface[] = [];
 
   constructor(private recipService: RecipeService){}
@@ -25,6 +26,6 @@ console.log('hello');
     })
   }
 
-  
+
 
 }

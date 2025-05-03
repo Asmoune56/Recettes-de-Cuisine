@@ -8,7 +8,7 @@ import { Myintirface,  } from '../model/Recipe';
 })
 export class RecipeService {
 
-  private apiUrl = 'http://localhost:3000/ricipes';
+  private apiUrl = 'http://localhost:3000/recipes';
 
   constructor (private http : HttpClient){}
 
@@ -17,11 +17,15 @@ export class RecipeService {
   getAllRecipes(): Observable <Myintirface[]>{
     return this.http.get<Myintirface[]>(this.apiUrl);
   }
+//delete
+  delete(id: any){
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 
 //post
 
-  postRecipe(recipe: any) {
-    return this.http.post<Myintirface>(this.apiUrl,recipe);
+  postRecipe(recipes: any) {
+    return this.http.post<Myintirface>(this.apiUrl,recipes);
   }
   
 
@@ -31,4 +35,10 @@ export class RecipeService {
     return this.http.get<Myintirface>(`${this.apiUrl}/${id}`);
   }
 
+  //methode update
+
+  updateRecipe(ricipes: { id: any; }){
+    return this.http.put(`${this.apiUrl}/${ricipes.id}`,ricipes);
+  }
+   
 }
