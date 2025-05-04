@@ -18,14 +18,14 @@ export class RecipeService {
     return this.http.get<Myintirface[]>(this.apiUrl);
   }
 //delete
-  delete(id: any){
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  delete(id: any) :Observable <Myintirface> {
+    return this.http.delete<Myintirface>(`${this.apiUrl}/${id}`);
   }
 
 //post
 
-  postRecipe(recipes: any) {
-    return this.http.post<Myintirface>(this.apiUrl,recipes);
+  postRecipe(recipe: any) {
+    return this.http.post<Myintirface>(this.apiUrl,recipe);
   }
   
 
@@ -37,8 +37,8 @@ export class RecipeService {
 
   //methode update
 
-  updateRecipe(ricipes: { id: any; }){
-    return this.http.put(`${this.apiUrl}/${ricipes.id}`,ricipes);
+  updateRecipe(ricipes: { id: any; }) :Observable <Myintirface>{
+    return this.http.put<Myintirface>(`${this.apiUrl}/${ricipes.id}`,ricipes);
   }
    
 }

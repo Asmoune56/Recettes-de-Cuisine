@@ -22,7 +22,9 @@ export class HomeComponent implements OnInit{
   };
   recipe: any;
   myCondition = false;
-  bootstrap: any;
+
+
+  filteredRecipes: Myintirface[] = [];
 
   
   
@@ -33,13 +35,31 @@ export class HomeComponent implements OnInit{
     
   ngOnInit(): void {
     this.myVar.getAllRecipes().subscribe(data =>{
-      this.recipes=data
+      this.recipes=data;
+      this.filteredRecipes = data;
+
     })
   }
+
+  search(event: any) {
+    const keyword = event.value.toLowerCase();
+  
+    this.filteredRecipes = this.recipes.filter(recipe =>
+      recipe.name.toLowerCase().includes(keyword) ||
+      recipe.category.toLowerCase().includes(keyword)
+    );
+  }
+
+
+
+
+
 // post
 postCommandes(){
   this.myVar.postRecipe(this.myCommande).subscribe((recipe) => {
     this.recipes = [recipe, ...this.recipes]; 
+    this.filteredRecipes = [recipe, ...this.filteredRecipes];
+
     this.videInput(); 
     this.modalInstance.hide(); 
   });
@@ -60,7 +80,6 @@ postCommandes(){
 editRecipe(recipe: any) {
   this.myCommande = recipe;
   this.myCondition = true;
-  this.modalInstance.hide();
 
   // Ouvre le modal avec Bootstrap 5 (si tu veux l'ouvrir automatiquement)
   const modalElement = document.getElementById('addRecipeModal');
@@ -72,18 +91,36 @@ editRecipe(recipe: any) {
 
 }
 
-updateRecipe(){
-  this.myVar.updateRecipe(this.myCommande).subscribe( commande =>{
-    this.videInput();
-    this.myCondition = false;
-    this.modalInstance.hide(); // Fermer le modal
+updateRecipe() {
+  this.myVar.updateRecipe(this.myCommande).subscribe(
+    (updatedRecipe) => {
+      // تحديث البيانات في القائمة
+      this.recipes = this.recipes.map(r => r.id === updatedRecipe.id ? updatedRecipe : r);
+      this.filteredRecipes = this.recipes;
 
-  })
+      // مسح الفورم وإعادة الوضع العادي
+      this.videInput();
+      this.myCondition = false;
+
+      // إغلاق المودال بطريقة آمنة
+      const modalEl = document.getElementById('addRecipeModal');
+      if (modalEl) {
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        modal?.hide();
+      }
+    },
+    error => {
+      console.error("Erreur lors de la mise à jour:", error);
+    }
+  );
 }
 
-deleteRecipe(id: any) {
+
+deleteRecipe(id: number) {
   this.myVar.delete(id).subscribe(() => {
     this.recipes = this.recipes.filter(recipe => recipe.id !== id);
+    this.filteredRecipes = this.filteredRecipes.filter(recipe => recipe.id !== id);
+
   });
 }
 
@@ -93,9 +130,6 @@ private modalInstance: any;
 ngAfterViewInit() {
   this.modalInstance = new bootstrap.Modal(this.modalElement.nativeElement);
 }
-
-
-
 
 
 
