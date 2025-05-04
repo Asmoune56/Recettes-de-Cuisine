@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
-  x = [1,"a","b",3,3,2,1,] ;
 
 
 }

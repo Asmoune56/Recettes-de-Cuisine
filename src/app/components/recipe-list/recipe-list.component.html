@@ -1,21 +1,35 @@
 <div class="recipe-bg-section">
   <div class="bg-overlay">
+    <div style="background: #FF676D; padding: 2rem 0;">
+      <div class="container my-4">
+        <div class="d-flex flex-column gap-3">
 
-<div style="background: #FF676D; padding: 2rem 0;">
-  <div class="container my-4">
-    <div class="d-flex flex-column gap-3">
-      <div *ngFor="let recipe of recipes" class="card shadow-sm flex-row align-items-center p-3">
-        <img [src]="recipe.image" class="img-fluid rounded" alt="{{ recipe.name }}" style="width: 120px; height: 80px; object-fit: cover;">
-        <div class="ms-3 flex-grow-1">
-          <h5 class="card-title mb-1">{{ recipe.name }}</h5>
-          <p class="card-text text-muted mb-2">{{ recipe.category }}</p>
-          <a [routerLink]="['/recette', recipe.id]" class="btn btn-primary btn-sm">Voir la recette</a>
+          <div *ngFor="let recipe of recipes" class="card shadow-sm flex-row align-items-center p-3">
+            <img [src]="recipe.image" class="img-fluid rounded" alt="{{ recipe.name }}" style="width: 120px; height: 80px; object-fit: cover;">
+            
+            <div class="ms-3 flex-grow-1">
+              <h5 class="card-title mb-1">{{ recipe.name }}</h5>
+              <p class="card-text text-muted mb-2">{{ recipe.category }}</p>
+              
+              <div class="d-flex align-items-center mb-2">
+                <ng-container *ngFor="let star of [1,2,3,4,5]">
+                  <i class="bi"
+                    [ngClass]="{
+                      'bi-star-fill': recipe.rating >= star,
+                      'bi-star-half': recipe.rating >= star - 0.5 && recipe.rating < star,
+                      'bi-star': recipe.rating < star - 0.5
+                    }"
+                    style="color: gold;"></i>
+                </ng-container>
+                <span class="text-muted ms-2">({{ recipe.rating }}/5)</span>
+              </div>
+
+              <a [routerLink]="['/recette', recipe.id]" class="btn btn-primary btn-sm">Voir la recette</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-</div>
-
-

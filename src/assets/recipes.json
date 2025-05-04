@@ -4,33 +4,17 @@
       "id": "353d",
       "name": "test",
       "image": "https://images.pexels.com/photos/31842952/pexels-photo-31842952/free-photo-of-delicieux-tofu-japonais-a-la-sauce-soja.jpeg?auto=compress&cs=tinysrgb&w=300",
-      "category": "photoooo",
+      "category": "photo",
       "ingredients": "erere",
       "steps": "'lkn'nkl"
-    },
-    {
-      "id": "c9d1",
-      "name": "test",
-      "image": "https://images.pexels.com/photos/31842952/pexels-photo-31842952/free-photo-of-delicieux-tofu-japonais-a-la-sauce-soja.jpeg?auto=compress&cs=tinysrgb&w=300",
-      "category": "salad",
-      "ingredients": "erere",
-      "steps": "vvvvvvvvvvvv"
     },
     {
       "id": "1e41",
       "name": "asmoun",
       "image": "https://images.pexels.com/photos/31842952/pexels-photo-31842952/free-photo-of-delicieux-tofu-japonais-a-la-sauce-soja.jpeg?auto=compress&cs=tinysrgb&w=300",
-      "category": "tackos",
+      "category": "dand",
       "ingredients": "X",
       "steps": ""
-    },
-    {
-      "id": "d96e",
-      "name": "asmoun",
-      "image": "https://images.pexels.com/photos/31842952/pexels-photo-31842952/free-photo-of-delicieux-tofu-japonais-a-la-sauce-soja.jpeg?auto=compress&cs=tinysrgb&w=300",
-      "category": "salad",
-      "ingredients": "erere",
-      "steps": "as"
     }
   ]
 }

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./rating-system.component.css']
 })
 export class RatingSystemComponent {
+  currentRating = 0;
 
+  rateRecipe(star: number) {
+    this.currentRating = star;
+  }
+  
 }
